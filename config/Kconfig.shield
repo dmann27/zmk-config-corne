@@ -1,0 +1,5 @@
+config SHIELD_CORNELIUS_LEFT
+	def_bool $(shields_list_contains,cornelius_left)
+
+config SHIELD_CORNELIUS_RIGHT
+	def_bool $(shields_list_contains,cornelius_right)
