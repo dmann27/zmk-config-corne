@@ -21,6 +21,12 @@ Columns: P1.06(38), P1.04(36), P0.11(11), P1.00(32), P0.24(24), P0.22(22), P0.20
 	chosen {
 		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &default_transform;
+		zmk,split = &split;
+	};
+
+	split: split {
+		compatible = "zmk,split-bt";
+		label = "SPLIT";
 	};
 
 	default_transform: keymap_transform_0 {

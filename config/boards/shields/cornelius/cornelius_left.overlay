@@ -11,9 +11,12 @@
 	WHAT THIS FILE DOES:
 	- The .overlay file applies settings for a specific board/side
 	- This is the LEFT side configuration
-	- Since both your sides use the same pin numbers, both overlays are identical
-	- (On split keyboards where sides differ, left and right overlays would be different)
+	- LEFT side is the split central (initiates connection)
 	*/
+};
+
+&split {
+	role = "central";
 };
 
 &pro_micro_i2c {

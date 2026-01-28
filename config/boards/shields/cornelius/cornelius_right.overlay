@@ -10,8 +10,12 @@
 	/* 
 	WHAT THIS FILE DOES:
 	- This is the RIGHT side configuration
-	- Since both your sides use the same pin numbers, this file is identical to the left overlay
+	- RIGHT side is the split peripheral (responds to connection)
 	*/
+};
+
+&split {
+	role = "peripheral";
 };
 
 &pro_micro_i2c {
