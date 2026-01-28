@@ -1,0 +1,3 @@
+if(DEFINED SHIELD_CORNELIUS_LEFT OR DEFINED SHIELD_CORNELIUS_RIGHT)
+  target_sources(app PRIVATE cornelius.c)
+endif()
