@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "cornelius.dtsi"
+
+&kscan0 {
+	/* 
+	WHAT THIS FILE DOES:
+	- This is the RIGHT side configuration
+	- Since both your sides use the same pin numbers, this file is identical to the left overlay
+	*/
+};
+
+&pro_micro_i2c {
+	status = "disabled";
+};
