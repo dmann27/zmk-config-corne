@@ -92,20 +92,20 @@ Columns: P1.06(38), P1.04(36), P0.11(11), P1.00(32), P0.24(24), P0.22(22), P0.20
 		*/
 
 		row-gpios
-			= <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.09 - top row */
-			, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P0.10 - home row */
-			, <&pro_micro 43 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.11 - bottom row (32 + 11 = 43) */
-			, <&pro_micro 45 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.13 - thumb row (32 + 13 = 45) */
+			= <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* P0.09 - top row */
+			, <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.10 - home row */
+			, <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P1.11 - bottom row */
+			, <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P1.13 - thumb row */
 			;
 
 		col-gpios
-			= <&pro_micro 38 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.06 - outer column (32 + 6 = 38) */
-			, <&pro_micro 36 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.04 - pinkie column (32 + 4 = 36) */
-			, <&pro_micro 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.11 - ring column */
-			, <&pro_micro 32 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.00 - middle column (32 + 0 = 32) */
-			, <&pro_micro 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.24 - index column */
-			, <&pro_micro 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.22 - inner column */
-			, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.20 - aux column */
+			= <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* P1.06 - outer column */
+			, <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* P1.04 - pinkie column */
+			, <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.11 - ring column */
+			, <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* P1.00 - middle column */
+			, <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.24 - index column */
+			, <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.22 - inner column */
+			, <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.20 - aux column */
 			;
 	};
 };
