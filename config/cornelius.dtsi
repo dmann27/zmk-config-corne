@@ -6,6 +6,17 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
+/*
+PIN MAPPING EXPLANATION:
+The nice!nano uses an nRF52840 with two GPIO ports: P0 and P1.
+- P0.XX pins: Use the number directly (e.g., 9 for P0.09)
+- P1.XX pins: Use 32 + the port number (e.g., 32 + 11 = 43 for P1.11)
+
+Your pin assignments:
+Rows:    P0.09(9), P0.10(10), P1.11(43), P1.13(45)
+Columns: P1.06(38), P1.04(36), P0.11(11), P1.00(32), P0.24(24), P0.22(22), P0.20(20)
+*/
+
 / {
 	chosen {
 		zmk,kscan = &kscan0;
@@ -81,20 +92,20 @@
 		*/
 
 		row-gpios
-			= <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P009 - top row */
-			, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P010 - home row */
-			, <&pro_micro 111 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P111 - bottom row (note: 111 = P1.11) */
-			, <&pro_micro 113 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P113 - thumb row (note: 113 = P1.13) */
+			= <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.09 - top row */
+			, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P0.10 - home row */
+			, <&pro_micro 43 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.11 - bottom row (32 + 11 = 43) */
+			, <&pro_micro 45 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.13 - thumb row (32 + 13 = 45) */
 			;
 
 		col-gpios
-			= <&pro_micro 106 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P106 - outer column */
-			, <&pro_micro 104 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P104 - pinkie column */
-			, <&pro_micro 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P011 - ring column */
-			, <&pro_micro 100 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P100 - middle column */
-			, <&pro_micro 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P024 - index column */
-			, <&pro_micro 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P022 - inner column */
-			, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P020 - aux column */
+			= <&pro_micro 38 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.06 - outer column (32 + 6 = 38) */
+			, <&pro_micro 36 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.04 - pinkie column (32 + 4 = 36) */
+			, <&pro_micro 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.11 - ring column */
+			, <&pro_micro 32 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* P1.00 - middle column (32 + 0 = 32) */
+			, <&pro_micro 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.24 - index column */
+			, <&pro_micro 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.22 - inner column */
+			, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* P0.20 - aux column */
 			;
 	};
 };
